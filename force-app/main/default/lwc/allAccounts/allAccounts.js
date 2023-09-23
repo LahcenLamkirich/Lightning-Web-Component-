@@ -18,4 +18,4 @@ export default class AllAccounts extends LightningElement {
             console.error(error);
         }
     }
-}   
+}
