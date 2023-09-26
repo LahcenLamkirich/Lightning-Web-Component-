@@ -5,5 +5,7 @@
 // You can also execute the entire file by running the command:
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
-
-AccountClass.getAllAccounts();
+// Running the batch class : 
+Database.executeBatch(new DeleteRecordBatch(), 200);   
+// Running the Queueable Class : 
+System.enqueueJob(new DeleteRecordQueable());

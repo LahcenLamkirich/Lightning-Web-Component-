@@ -2,11 +2,13 @@ public with sharing class DeleteRecordBatch implements Database.Batchable<sObjec
     public DeleteRecordBatch(){}
     
     public static Database.QueryLocator start(Database.BatchableContext context){
-        return Database.getQueryLocator('SELECT Id FROM Case '\Closed\'');
+        System.debug('Batch is starting !');
+        return Database.getQueryLocator('SELECT Id FROM Case WHERE Status = \'Closed\'');
     }
     
     public static void execute(Database.batchableContext context, List<Case> scope){
         try {
+            System.debug('Executing the batch class !');
             delete scope ;
         }  
         catch (Exception ex) {
